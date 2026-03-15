@@ -1,26 +1,26 @@
 # Power Tools for Fusion — Exports
 
-Version 1.0 | Autodesk Fusion 360 Add-in | IMA LLC
+Version 1.0 | Autodesk Fusion Add-in | IMA LLC
 
-Power Tools for Fusion — Exports is an Autodesk Fusion 360 add-in that extends the built-in export capabilities of the platform. It provides commands to export assembly component data and structure to industry-standard formats for use in downstream workflows such as procurement, manufacturing documentation, and architecture visualization.
+Power Tools for Fusion — Exports is an Autodesk Fusion add-in that extends the built-in export capabilities of the platform. It provides commands to export assembly component data and structure to industry-standard formats for use in downstream workflows such as procurement, manufacturing documentation, and architecture visualization.
 
 ## Prerequisites
 
-- Autodesk Fusion 360 (any current release)
+- Autodesk Fusion (any current release)
 - Windows 10/11 or macOS 12 or later
-- Python runtime included with Fusion 360 (no separate installation required)
+- Python runtime included with Autodesk Fusion (no separate installation required)
 - (Optional) [Graphviz](https://www.graphviz.org/download/) to render exported `.dot` files locally
 - (Optional) A Mermaid-compatible viewer to render exported `.mmd` files, such as the [Markdown Preview Mermaid Support](https://marketplace.visualstudio.com/items?itemName=bierner.markdown-mermaid) extension for Visual Studio Code
 
 ## Installation
 
 1. Download or clone this repository to a local folder on your computer.
-2. In Autodesk Fusion 360, open the **Scripts and Add-Ins** dialog by selecting **Tools** > **Scripts and Add-Ins**, or by pressing **Shift+S**.
+2. In Autodesk Fusion, open the **Scripts and Add-Ins** dialog by selecting **Tools** > **Scripts and Add-Ins**, or by pressing **Shift+S**.
 3. On the **Add-Ins** tab, click the **+** icon and browse to the folder where you cloned the repository.
 4. Select **PowerTools-Exports** and click **Open**.
 5. Click **Run**. The add-in commands become available in the **File** drop-down menu of any open design document.
 
-To load the add-in automatically each time Fusion 360 starts, select the **Run on Startup** check box in the Add-Ins dialog.
+To load the add-in automatically each time Autodesk Fusion starts, select the **Run on Startup** check box in the Add-Ins dialog.
 
 ## Commands
 
@@ -44,11 +44,11 @@ The following C4 context diagram shows the overall system context for the Power 
 C4Context
     title Power Tools for Fusion — Exports: System Context
 
-    Person(user, "Designer", "Autodesk Fusion 360 user who works with assembly design documents.")
+    Person(user, "Designer", "Autodesk Fusion user who works with assembly design documents.")
 
-    System(addin, "Power Tools – Exports", "Fusion 360 add-in. Provides Export BOM as CSV, Export Graphviz Diagram, and Export Mermaid Diagram commands.")
+    System(addin, "Power Tools – Exports", "Autodesk Fusion add-in. Provides Export BOM as CSV, Export Graphviz Diagram, and Export Mermaid Diagram commands.")
 
-    System_Ext(fusion, "Autodesk Fusion 360", "CAD platform. Hosts the add-in, provides the design API and component data, and renders the folder browser dialog.")
+    System_Ext(fusion, "Autodesk Fusion", "CAD platform. Hosts the add-in, provides the design API and component data, and renders the folder browser dialog.")
 
     System_Ext(fs, "Local File System", "Destination for exported files: .csv, .dot, and .mmd.")
 
@@ -67,7 +67,7 @@ C4Context
 ```
 PowerTools-Exports/
 ├── PowerTools-Exports.py          # Add-in entry point (run / stop)
-├── PowerTools-Exports.manifest    # Fusion 360 add-in manifest
+├── PowerTools-Exports.manifest    # Autodesk Fusion add-in manifest
 ├── config.py                      # Add-in configuration constants
 ├── commands/
 │   ├── exportbomcsv/
@@ -86,4 +86,8 @@ PowerTools-Exports/
 
 ## License
 
-Copyright IMA LLC. All rights reserved.
+This project is released under the [MIT License](LICENSE).
+
+---
+
+*Copyright © 2026 IMA LLC. All rights reserved.*

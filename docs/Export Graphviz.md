@@ -4,17 +4,17 @@
 
 ## Overview
 
-The **Export Graphviz Diagram** command exports the component hierarchy of the active Autodesk Fusion 360 assembly as a [Graphviz](https://www.graphviz.org/) DOT file. The resulting file represents the full parent-child relationship tree and can be rendered into a visual diagram using Graphviz tools or compatible viewers.
+The **Export Graphviz Diagram** command exports the component hierarchy of the active Autodesk Fusion assembly as a [Graphviz](https://www.graphviz.org/) DOT file. The resulting file represents the full parent-child relationship tree and can be rendered into a visual diagram using Graphviz tools or compatible viewers.
 
 ## Prerequisites
 
-- An Autodesk Fusion 360 design document must be active and open.
+- An Autodesk Fusion design document must be active and open.
 - The design must contain at least one component with child components or sub-assemblies.
 - To render the exported `.dot` file, install [Graphviz](https://www.graphviz.org/download/) locally or use an [online Graphviz viewer](https://dreampuf.github.io/GraphvizOnline).
 
 ## How to use this command
 
-1. Open an assembly design in Autodesk Fusion 360.
+1. Open an assembly design in Autodesk Fusion.
 2. From the **File** drop-down menu in the Quick Access Toolbar, select **Export Graphviz Diagram...**.
 3. In the folder browser dialog, navigate to the destination folder for the output file.
 4. Click **OK**. Power Tools traverses the assembly and writes the file.
@@ -67,17 +67,17 @@ From the design document's **File** drop-down menu in the Quick Access Toolbar, 
 
 ### System context
 
-The following C4 context diagram shows how the **Export Graphviz Diagram** command interacts with Autodesk Fusion 360 and external rendering tools.
+The following C4 context diagram shows how the **Export Graphviz Diagram** command interacts with Autodesk Fusion and external rendering tools.
 
 ```mermaid
 C4Context
     title Export Graphviz Diagram — System Context
 
-    Person(user, "Designer", "Autodesk Fusion 360 user with an active assembly open.")
+    Person(user, "Designer", "Autodesk Fusion user with an active assembly open.")
 
-    System(addin, "Power Tools – Export Graphviz", "Fusion 360 add-in command that traverses the component hierarchy and writes a Graphviz DOT file.")
+    System(addin, "Power Tools – Export Graphviz", "Autodesk Fusion add-in command that traverses the component hierarchy and writes a Graphviz DOT file.")
 
-    System_Ext(fusion, "Autodesk Fusion 360", "CAD platform. Provides the design API, component occurrence tree, and the folder browser dialog.")
+    System_Ext(fusion, "Autodesk Fusion", "CAD platform. Provides the design API, component occurrence tree, and the folder browser dialog.")
 
     System_Ext(fs, "Local File System", "Receives the exported DOT file named after the active document.")
 
@@ -127,4 +127,4 @@ flowchart TD
 
 [Back to README](../README.md)
 
-*Copyright IMA LLC*
+*Copyright © 2026 IMA LLC. All rights reserved.*

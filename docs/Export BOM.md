@@ -4,16 +4,16 @@
 
 ## Overview
 
-The **Export BOM as CSV** command exports the bill of materials (BOM) for the active Autodesk Fusion 360 assembly to a comma-separated values (CSV) file. Use this command to share component data with procurement, manufacturing, or project management tools that accept CSV input.
+The **Export BOM as CSV** command exports the bill of materials (BOM) for the active Autodesk Fusion assembly to a comma-separated values (CSV) file. Use this command to share component data with procurement, manufacturing, or project management tools that accept CSV input.
 
 ## Prerequisites
 
-- An Autodesk Fusion 360 design document must be active and open.
+- An Autodesk Fusion design document must be active and open.
 - The design must contain at least one component.
 
 ## How to use this command
 
-1. Open an assembly design in Autodesk Fusion 360.
+1. Open an assembly design in Autodesk Fusion.
 2. From the **File** drop-down menu in the Quick Access Toolbar, select **Export BOM as CSV**.
 3. In the folder browser dialog, navigate to the destination folder for the output file.
 4. Click **OK**. Power Tools traverses the assembly and writes the file.
@@ -62,17 +62,17 @@ From the design document's **File** drop-down menu in the Quick Access Toolbar, 
 
 ### System context
 
-The following C4 context diagram shows how the **Export BOM as CSV** command interacts with Autodesk Fusion 360 and the local file system.
+The following C4 context diagram shows how the **Export BOM as CSV** command interacts with Autodesk Fusion and the local file system.
 
 ```mermaid
 C4Context
     title Export BOM as CSV — System Context
 
-    Person(user, "Designer", "Autodesk Fusion 360 user with an active assembly open.")
+    Person(user, "Designer", "Autodesk Fusion user with an active assembly open.")
 
-    System(addin, "Power Tools – Export BOM", "Fusion 360 add-in command that collects component data from the active design and writes a flat BOM to a CSV file.")
+    System(addin, "Power Tools – Export BOM", "Autodesk Fusion add-in command that collects component data from the active design and writes a flat BOM to a CSV file.")
 
-    System_Ext(fusion, "Autodesk Fusion 360", "CAD platform. Provides the design API, component tree, body and material data, and the folder browser dialog.")
+    System_Ext(fusion, "Autodesk Fusion", "CAD platform. Provides the design API, component tree, body and material data, and the folder browser dialog.")
 
     System_Ext(fs, "Local File System", "Receives the exported CSV file named after the active document.")
 
@@ -115,4 +115,4 @@ flowchart TD
 
 [Back to README](../README.md)
 
-*Copyright IMA LLC*
+*Copyright © 2026 IMA LLC. All rights reserved.*
