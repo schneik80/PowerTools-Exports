@@ -1,4 +1,4 @@
-# Power Tools for Fusion — Exports
+# PowerTools: Export Tools for Autodesk Fusion
 
 Version 1.0 | Autodesk Fusion Add-in | IMA LLC
 
