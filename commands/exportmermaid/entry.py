@@ -1,5 +1,5 @@
 import adsk.core, adsk.fusion
-import os, traceback
+import os, traceback, base64, webbrowser, json
 from ...lib import fusionAddInUtils as futil
 from ... import config
 
@@ -106,6 +106,13 @@ def command_execute(args: adsk.core.CommandCreatedEventArgs):
             with open(filepath, "w") as f:
                 f.write(resultString)
             ui.messageBox("Graph saved at: " + filepath, parentOcc, 0, 2)
+
+            # Encode to base64 and open in Mermaid Live Editor
+            # The live editor expects a JSON state object, not raw mermaid text
+            state = json.dumps({"code": resultString, "mermaid": json.dumps({"theme": "base"})})
+            encoded_code = base64.b64encode(state.encode('utf-8')).decode('utf-8')
+            url = f"https://mermaid.live/view#base64:{encoded_code}"
+            webbrowser.open(url)
         else:
             return
 
