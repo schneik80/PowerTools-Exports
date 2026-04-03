@@ -84,7 +84,7 @@ def command_execute(args: adsk.core.CommandCreatedEventArgs):
 
         # Create the title for the output.
         parentOcc = design.parentDocument.name
-        resultString = "%%{\ninit: {\n'theme':'base',\n'themeVariables': {\n'primaryColor': '#f0f0f0',\n'primaryBorderColor': '#454F61',\n'lineColor': '#59cff0',\n'tertiaryColor': '#e1ecf5',\n'fontSize': '14px'\n}\n}\n}%%\n"
+        resultString = "%%{\ninit: {\n'theme':'base',\n'look': 'classic',\n'layout': 'elk',\n'themeVariables': {\n'primaryColor': '#f0f0f0',\n'primaryBorderColor': '#454F61',\n'lineColor': '#59cff0',\n'tertiaryColor': '#e1ecf5',\n'fontSize': '14px'\n}\n}\n}%%\n"
         resultString += "graph LR\n"
         # resultString += sParentOcc + '\n'
 
