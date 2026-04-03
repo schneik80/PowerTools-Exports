@@ -1,11 +1,9 @@
 from .exportbomcsv import entry as exportbomcsv
-from .exportgraphviz import entry as exportgraphviz
 from .exportmermaid import entry as exportmermaid
 
 # Fusion will automatically call the start() and stop() functions.
 commands = [
     exportbomcsv,
-    exportgraphviz,
     exportmermaid,
 ]
 

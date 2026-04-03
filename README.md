@@ -9,7 +9,6 @@ Power Tools for Fusion — Exports is an Autodesk Fusion add-in that extends the
 - Autodesk Fusion (any current release)
 - Windows 10/11 or macOS 12 or later
 - Python runtime included with Autodesk Fusion (no separate installation required)
-- (Optional) [Graphviz](https://www.graphviz.org/download/) to render exported `.dot` files locally
 - (Optional) A Mermaid-compatible viewer to render exported `.mmd` files, such as the [Markdown Preview Mermaid Support](https://marketplace.visualstudio.com/items?itemName=bierner.markdown-mermaid) extension for Visual Studio Code
 
 ## Installation
@@ -29,7 +28,6 @@ The following commands are available after installation. Each command is accessi
 | Command | Output format | Description |
 |---|---|---|
 | [Export BOM as CSV](./docs/Export%20BOM.md) | `.csv` | Exports a flat bill of materials containing the display name, part number, material, and instance count for each leaf component in the active assembly. |
-| [Export Graphviz Diagram](./docs/Export%20Graphviz.md) | `.dot` | Exports the full hierarchical component relationship tree as a Graphviz DOT file for visual diagram rendering. |
 | [Export Mermaid Diagram](./docs/Export%20Mermaid.md) | `.mmd` | Exports the full hierarchical component relationship tree as a Mermaid left-to-right flowchart file for rendering in Markdown viewers and web tools. |
 
 ## Accessing commands
@@ -46,11 +44,11 @@ C4Context
 
     Person(user, "Designer", "Autodesk Fusion user who works with assembly design documents.")
 
-    System(addin, "Power Tools – Exports", "Autodesk Fusion add-in. Provides Export BOM as CSV, Export Graphviz Diagram, and Export Mermaid Diagram commands.")
+    System(addin, "Power Tools – Exports", "Autodesk Fusion add-in. Provides Export BOM as CSV and Export Mermaid Diagram commands.")
 
     System_Ext(fusion, "Autodesk Fusion", "CAD platform. Hosts the add-in, provides the design API and component data, and renders the folder browser dialog.")
 
-    System_Ext(fs, "Local File System", "Destination for exported files: .csv, .dot, and .mmd.")
+    System_Ext(fs, "Local File System", "Destination for exported files: .csv and .mmd.")
 
     System_Ext(downstream, "Downstream Tools", "Spreadsheet applications, Graphviz viewers, Mermaid renderers, and procurement or documentation systems that consume the exported files.")
 
@@ -72,15 +70,12 @@ PowerTools-Exports/
 ├── commands/
 │   ├── exportbomcsv/
 │   │   └── entry.py               # Export BOM as CSV command
-│   ├── exportgraphviz/
-│   │   └── entry.py               # Export Graphviz Diagram command
 │   └── exportmermaid/
 │       └── entry.py               # Export Mermaid Diagram command
 ├── lib/
 │   └── fusionAddInUtils/          # Shared event handler and logging utilities
 └── docs/
     ├── Export BOM.md
-    ├── Export Graphviz.md
     └── Export Mermaid.md
 ```
 
