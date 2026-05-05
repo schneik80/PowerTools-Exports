@@ -1,7 +1,5 @@
 # PowerTools: Export Tools for Autodesk Fusion
 
-Version 1.0 | Autodesk Fusion Add-in | IMA LLC
-
 Power Tools for Fusion — Exports is an Autodesk Fusion add-in that extends the built-in export capabilities of the platform. It provides commands to export assembly component data and structure to industry-standard formats for use in downstream workflows such as procurement, manufacturing documentation, and architecture visualization.
 
 ## Prerequisites
