@@ -2,7 +2,7 @@
 # Copyright (C) 2022-2026 IMA LLC
 
 import adsk.core, adsk.fusion
-import os, traceback
+import os
 from ...lib import fusionAddInUtils as futil
 from ... import config
 
@@ -152,7 +152,7 @@ def command_execute(args: adsk.core.CommandCreatedEventArgs):
         resultString += traverseAssembly(bom)
 
         # Display the BOM in the console
-        print(resultString)
+        futil.log(resultString)
 
         # Set styles of file dialog.
         folderDlg = ui.createFolderDialog()
@@ -171,10 +171,7 @@ def command_execute(args: adsk.core.CommandCreatedEventArgs):
             return
 
     except:
-        if ui:
-            ui.messageBox(
-                ("command executed failed: {}").format(traceback.format_exc())
-            )
+        futil.handle_error(CMD_NAME, show_message_box=True)
 
 
 # This function will be called when the user completes the command.

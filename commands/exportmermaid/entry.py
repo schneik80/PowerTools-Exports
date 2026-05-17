@@ -2,7 +2,7 @@
 # Copyright (C) 2022-2026 IMA LLC
 
 import adsk.core, adsk.fusion
-import os, traceback, base64, webbrowser, json
+import os, base64, webbrowser, json
 from ...lib import fusionAddInUtils as futil
 from ... import config
 
@@ -120,8 +120,7 @@ def command_execute(args: adsk.core.CommandCreatedEventArgs):
             return
 
     except:
-        if ui:
-            ui.messageBox("Failed:\n{}".format(traceback.format_exc()))
+        futil.handle_error(CMD_NAME, show_message_box=True)
 
 
 # This function will be called when the user completes the command.
