@@ -3,11 +3,13 @@
 
 from .exportbomcsv import entry as exportbomcsv
 from .exportmermaid import entry as exportmermaid
+from .exporthtmlbom import entry as exporthtmlbom
 
 # Fusion will automatically call the start() and stop() functions.
 commands = [
     exportbomcsv,
     exportmermaid,
+    exporthtmlbom,
 ]
 
 
