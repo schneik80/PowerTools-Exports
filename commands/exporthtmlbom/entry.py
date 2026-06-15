@@ -71,20 +71,15 @@ def start():
 
     # Add a button into the File drop-down of the Quick Access Toolbar,
     # matching the other PowerTools export commands.
-    qat = ui.toolbars.itemById("QAT")
-    fileDropDown = qat.controls.itemById("FileSubMenuCommand")
-    fileDropDown.controls.addCommand(cmd_def, "ExportCommand", True)
+    file_dd = futil.get_qat_file_dropdown()
+    if file_dd:
+        file_dd.controls.addCommand(cmd_def, "ExportCommand", False)
 
 
 # Executed when add-in is stopped.
 def stop():
-    qat = ui.toolbars.itemById("QAT")
-    fileDropDown = qat.controls.itemById("FileSubMenuCommand")
-    command_control = fileDropDown.controls.itemById(CMD_ID)
+    futil.remove_from_qat_file_dropdown(CMD_ID)
     command_definition = ui.commandDefinitions.itemById(CMD_ID)
-
-    if command_control:
-        command_control.deleteMe()
     if command_definition:
         command_definition.deleteMe()
 
